@@ -1,3 +1,4 @@
+import { ChevronDown } from "lucide-react"
 import { WebGLShader } from "@/components/ui/web-gl-shader"
 import personalLimits from "@/assets/images/personal_limits.png"
 import groupView from "@/assets/images/group_view.png"
@@ -51,20 +52,28 @@ export default function App() {
             </span>
           </h1>
 
-          <div className="mt-2 flex flex-col items-center gap-3">
-            <p className="text-sm text-white/40">Take Back Your Time</p>
-            <button className="text-sm text-white/40 underline underline-offset-4 hover:text-white/70 transition-colors">
-              Learn more ↓
-            </button>
-          </div>
+          <p className="mt-2 text-sm text-white/40">Take Back Your Time</p>
         </div>
 
+        {/* Scroll indicator */}
+        <button
+          type="button"
+          onClick={() =>
+            document.getElementById("screenshots")?.scrollIntoView({ behavior: "smooth" })
+          }
+          className="group absolute bottom-8 left-0 right-0 z-10 flex flex-col items-center gap-2 animate-bounce transition-colors"
+          aria-label="Scroll to explore"
+        >
+          <span className="text-xs text-white/50 group-hover:text-white/70">Scroll to explore</span>
+          <ChevronDown className="h-6 w-6 text-white/50 group-hover:text-white/70" aria-hidden />
+        </button>
+
         {/* Bottom fade */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#08060f] to-transparent" />
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#08060f] to-transparent" />
       </section>
 
       {/* ── Screenshots ───────────────────────────────────────────────────── */}
-      <section className="bg-[#08060f] px-4 py-24">
+      <section id="screenshots" className="bg-[#08060f] px-4 py-24">
         <div className="mx-auto max-w-5xl">
           <div className="mb-16 text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
