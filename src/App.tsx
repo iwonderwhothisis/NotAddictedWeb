@@ -84,7 +84,7 @@ export default function App() {
             </p>
           </div>
 
-          <div className="flex justify-center gap-16">
+          <div className="flex flex-col items-center gap-12 sm:flex-row sm:justify-center sm:gap-16">
             {SCREENSHOTS.map(({ url, label, desc }) => (
               <div key={label} className="group flex flex-col items-center gap-4">
                 {/* Phone frame */}
